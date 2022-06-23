@@ -5,6 +5,8 @@ import Welcome from './components/Welcome';
 import Counter from './components/Counter';
 import  { BrowserRouter as Router, Switch, Routes, Route, Link} from 'react-router-dom'
 import Contact from './pages/Contact';
+import AboutMe from './pages/AboutMe';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -21,10 +23,19 @@ function App() {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
+            <li>
+              <Link to="/aboutme">About Me</Link>
+            </li>
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
           </ul>
         </div>
         <Routes>
+          <Route path='/' element={null}/>
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='/aboutme' element={<AboutMe/>}/>
+          <Route path='/profile/:name' element={<Profile/>}/>
         </Routes>
       </Router>
 
